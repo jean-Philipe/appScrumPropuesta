@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -20,11 +21,38 @@
                     <button class="view-btn" data-view="table">
                         <i class="fas fa-table"></i> Table
                     </button>
+                    <button class="view-btn" data-view="stats" style="display: none;">
+                        <i class="fas fa-chart-bar"></i> Estadísticas
+                    </button>
+                    <button class="view-btn" data-view="logs" id="logs-btn" style="display: none;">
+                        <i class="fas fa-list"></i> Logs
+                    </button>
                 </div>
             </div>
-            <button class="add-story-btn">+ Nueva Historia</button>
+            <div class="header-right">
+                <div class="role-toggle">
+                    <button class="role-btn active" data-role="student">
+                        <i class="fas fa-user-graduate"></i> Vista Estudiante
+                    </button>
+                    <button class="role-btn" data-role="assistant">
+                        <i class="fas fa-user-tie"></i> Vista Ayudante
+                    </button>
+                </div>
+                <button class="add-story-btn">+ Nueva Historia</button>
+            </div>
         </header>
         
+        <div class="sprint-navigation">
+            <div class="sprint-tabs">
+                <button class="sprint-tab active" data-sprint="1">Sprint 1</button>
+                <button class="sprint-tab" data-sprint="2">Sprint 2</button>
+                <button class="sprint-tab" data-sprint="3">Sprint 3</button>
+                <button class="sprint-tab add-sprint">
+                    <i class="fas fa-plus"></i> Nuevo Sprint
+                </button>
+            </div>
+        </div>
+
         <div class="view board-view active">
             <div class="board">
                 <div class="column">
@@ -295,6 +323,86 @@
                         <!-- Las filas se generarán dinámicamente con JavaScript -->
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="view logs-view">
+            <div class="logs-container">
+                <div class="logs-header">
+                    <h2>Logs del Proyecto</h2>
+                    <div class="logs-controls">
+                        <button class="clear-logs-btn">
+                            <i class="fas fa-trash"></i> Limpiar Logs
+                        </button>
+                        <button class="export-logs-btn">
+                            <i class="fas fa-download"></i> Exportar
+                        </button>
+                    </div>
+                </div>
+                <div class="logs-content">
+                    <div class="logs-timeline">
+                        <!-- Los logs se agregarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view stats-view">
+            <div class="stats-container">
+                <div class="stats-header">
+                    <h2>Estadísticas del Sprint <span class="current-sprint-number">1</span></h2>
+                </div>
+                <div class="stats-content">
+                    <div class="stats-row">
+                        <div class="stats-card burndown-chart">
+                            <h3>Burndown Chart</h3>
+                            <div class="chart-container">
+                                <canvas id="burndownChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stats-card">
+                            <h3>Historias por Estado</h3>
+                            <div class="chart-container">
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="stats-card">
+                            <h3>Actividad por Usuario</h3>
+                            <div class="chart-container">
+                                <canvas id="userActivityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stats-card">
+                            <h3>Resumen del Sprint</h3>
+                            <div class="stats-summary">
+                                <div class="summary-item">
+                                    <div class="summary-label">Historias Totales</div>
+                                    <div class="summary-value" id="totalStories">0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Puntos Totales</div>
+                                    <div class="summary-value" id="totalPoints">0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Historias Completadas</div>
+                                    <div class="summary-value" id="completedStories">0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Puntos Completados</div>
+                                    <div class="summary-value" id="completedPoints">0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">% Completado</div>
+                                    <div class="summary-value" id="completionPercentage">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
