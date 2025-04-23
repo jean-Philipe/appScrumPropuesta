@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Backlog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Scrum Backlog</h1>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="board">
+                        <i class="fas fa-columns"></i> Board
+                    </button>
+                    <button class="view-btn" data-view="table">
+                        <i class="fas fa-table"></i> Table
+                    </button>
+                </div>
+            </div>
+            <button class="add-story-btn">+ Nueva Historia</button>
+        </header>
+        
+        <div class="view board-view active">
+            <div class="board">
+                <div class="column">
+                    <div class="column-header">
+                        <h2>En Revisión</h2>
+                        <span class="issue-count">2</span>
+                    </div>
+                    <div class="stories-container">
+                        <!-- Tarjetas En Revisión -->
+                        <div class="story-card" data-id="US-003">
+                            <div class="story-header">
+                                <span class="story-id">US-003</span>
+                                <span class="story-status">En Revisión</span>
+                            </div>
+                            <h3>Optimizar rendimiento de base de datos</h3>
+                            <p>Como desarrollador, quiero mejorar las consultas SQL para reducir el tiempo de respuesta.</p>
+                            <div class="story-footer">
+                                <span class="story-points">8 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-011">
+                            <div class="story-header">
+                                <span class="story-id">US-011</span>
+                                <span class="story-status">En Revisión</span>
+                            </div>
+                            <h3>Sistema de backups automáticos</h3>
+                            <p>Como administrador, quiero que el sistema realice backups automáticos diariamente.</p>
+                            <div class="story-footer">
+                                <span class="story-points">5 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        <h2>Por Hacer</h2>
+                        <span class="issue-count">5</span>
+                    </div>
+                    <div class="stories-container">
+                        <!-- Tarjetas Por Hacer -->
+                        <div class="story-card" data-id="US-001">
+                            <div class="story-header">
+                                <span class="story-id">US-001</span>
+                                <span class="story-status">Por Hacer</span>
+                            </div>
+                            <h3>Implementar sistema de autenticación</h3>
+                            <p>Como usuario, quiero poder iniciar sesión en la aplicación para acceder a mis datos personales.</p>
+                            <div class="story-footer">
+                                <span class="story-points">5 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-005">
+                            <div class="story-header">
+                                <span class="story-id">US-005</span>
+                                <span class="story-status">Por Hacer</span>
+                            </div>
+                            <h3>Implementar búsqueda avanzada</h3>
+                            <p>Como usuario, quiero poder buscar contenido usando filtros avanzados.</p>
+                            <div class="story-footer">
+                                <span class="story-points">8 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-006">
+                            <div class="story-header">
+                                <span class="story-id">US-006</span>
+                                <span class="story-status">Por Hacer</span>
+                            </div>
+                            <h3>Integración con API externa</h3>
+                            <p>Como desarrollador, necesito integrar el sistema con una API externa de pagos.</p>
+                            <div class="story-footer">
+                                <span class="story-points">13 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-007">
+                            <div class="story-header">
+                                <span class="story-id">US-007</span>
+                                <span class="story-status">Por Hacer</span>
+                            </div>
+                            <h3>Sistema de notificaciones</h3>
+                            <p>Como usuario, quiero recibir notificaciones sobre actualizaciones importantes.</p>
+                            <div class="story-footer">
+                                <span class="story-points">5 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-008">
+                            <div class="story-header">
+                                <span class="story-id">US-008</span>
+                                <span class="story-status">Por Hacer</span>
+                            </div>
+                            <h3>Exportación de datos</h3>
+                            <p>Como administrador, quiero poder exportar datos en diferentes formatos.</p>
+                            <div class="story-footer">
+                                <span class="story-points">3 pts</span>
+                                <span class="story-priority">Baja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        <h2>En Progreso</h2>
+                        <span class="issue-count">3</span>
+                    </div>
+                    <div class="stories-container">
+                        <!-- Tarjetas En Progreso -->
+                        <div class="story-card" data-id="US-002">
+                            <div class="story-header">
+                                <span class="story-id">US-002</span>
+                                <span class="story-status">En Progreso</span>
+                            </div>
+                            <h3>Diseñar interfaz de usuario</h3>
+                            <p>Como diseñador, quiero crear una interfaz intuitiva y atractiva para mejorar la experiencia del usuario.</p>
+                            <div class="story-footer">
+                                <span class="story-points">3 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-009">
+                            <div class="story-header">
+                                <span class="story-id">US-009</span>
+                                <span class="story-status">En Progreso</span>
+                            </div>
+                            <h3>Implementar chat en tiempo real</h3>
+                            <p>Como usuario, quiero poder chatear con otros usuarios en tiempo real.</p>
+                            <div class="story-footer">
+                                <span class="story-points">8 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-010">
+                            <div class="story-header">
+                                <span class="story-id">US-010</span>
+                                <span class="story-status">En Progreso</span>
+                            </div>
+                            <h3>Sistema de reportes</h3>
+                            <p>Como administrador, quiero generar reportes estadísticos del sistema.</p>
+                            <div class="story-footer">
+                                <span class="story-points">5 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="column-header">
+                        <h2>Terminado</h2>
+                        <span class="issue-count">7</span>
+                    </div>
+                    <div class="stories-container">
+                        <!-- Tarjetas Terminadas -->
+                        <div class="story-card" data-id="US-004">
+                            <div class="story-header">
+                                <span class="story-id">US-004</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Configurar entorno de desarrollo</h3>
+                            <p>Como equipo, necesitamos configurar el entorno de desarrollo para comenzar el proyecto.</p>
+                            <div class="story-footer">
+                                <span class="story-points">2 pts</span>
+                                <span class="story-priority">Baja</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-012">
+                            <div class="story-header">
+                                <span class="story-id">US-012</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Implementar registro de usuarios</h3>
+                            <p>Como usuario nuevo, quiero poder registrarme en el sistema.</p>
+                            <div class="story-footer">
+                                <span class="story-points">3 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-013">
+                            <div class="story-header">
+                                <span class="story-id">US-013</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Recuperación de contraseña</h3>
+                            <p>Como usuario, quiero poder recuperar mi contraseña si la olvido.</p>
+                            <div class="story-footer">
+                                <span class="story-points">2 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-014">
+                            <div class="story-header">
+                                <span class="story-id">US-014</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Página de inicio</h3>
+                            <p>Como usuario, quiero ver una página de inicio atractiva con las funcionalidades principales.</p>
+                            <div class="story-footer">
+                                <span class="story-points">5 pts</span>
+                                <span class="story-priority">Alta</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-015">
+                            <div class="story-header">
+                                <span class="story-id">US-015</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Menú de navegación</h3>
+                            <p>Como usuario, quiero tener un menú de navegación intuitivo.</p>
+                            <div class="story-footer">
+                                <span class="story-points">2 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-016">
+                            <div class="story-header">
+                                <span class="story-id">US-016</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Footer responsivo</h3>
+                            <p>Como usuario, quiero ver un footer con información relevante en todas las páginas.</p>
+                            <div class="story-footer">
+                                <span class="story-points">1 pt</span>
+                                <span class="story-priority">Baja</span>
+                            </div>
+                        </div>
+                        <div class="story-card" data-id="US-017">
+                            <div class="story-header">
+                                <span class="story-id">US-017</span>
+                                <span class="story-status">Terminado</span>
+                            </div>
+                            <h3>Configuración de emails</h3>
+                            <p>Como administrador, quiero configurar las plantillas de email del sistema.</p>
+                            <div class="story-footer">
+                                <span class="story-points">3 pts</span>
+                                <span class="story-priority">Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view table-view">
+            <div class="table-controls">
+                <button class="column-settings-btn">
+                    <i class="fas fa-cog"></i> Columnas
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Estado</th>
+                            <th>Puntos</th>
+                            <th>Prioridad</th>
+                            <th>Asignado a</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar historia -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <span class="story-id"></span>
+                    <h2 class="story-title"></h2>
+                </div>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <label>Título</label>
+                    <input type="text" class="edit-title">
+                </div>
+                <div class="modal-section">
+                    <label>Descripción</label>
+                    <textarea class="edit-description"></textarea>
+                </div>
+                <div class="modal-section modal-row">
+                    <div>
+                        <label>Estado</label>
+                        <select class="edit-status">
+                            <option value="En Revisión">En Revisión</option>
+                            <option value="Por Hacer">Por Hacer</option>
+                            <option value="En Progreso">En Progreso</option>
+                            <option value="Terminado">Terminado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Puntos</label>
+                        <select class="edit-points">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="8">8</option>
+                            <option value="13">13</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Prioridad</label>
+                        <select class="edit-priority">
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <label>Asignado a</label>
+                    <select class="edit-assignee">
+                        <option value="">Sin asignar</option>
+                        <option value="Juan">Juan</option>
+                        <option value="María">María</option>
+                        <option value="Pedro">Pedro</option>
+                    </select>
+                </div>
+                <div class="modal-section acceptance-criteria-section">
+                    <div class="acceptance-criteria-header">
+                        <label>Criterios de Aceptación</label>
+                        <button class="add-criteria-btn" style="display: none;">
+                            <i class="fas fa-plus"></i> Agregar Criterio
+                        </button>
+                    </div>
+                    <div class="acceptance-criteria-list">
+                        <!-- Los criterios se agregarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-cancel">Cancelar</button>
+                <button class="modal-save">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
